@@ -1,0 +1,4 @@
+oleksandr@oleksandr-ThinkPad-X140e:~/git_repo_file$ git init
+Initialized empty Git repository in /home/oleksandr/git_repo_file/.git/
+oleksandr@oleksandr-ThinkPad-X140e:~/git_repo_file$ git add --all
+oleksandr@oleksandr-ThinkPad-X140e:~/git_repo_file$
