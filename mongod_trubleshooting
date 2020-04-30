@@ -1,0 +1,29 @@
+root@oleksandr-ThinkPad-X140e:~# mongod
+.......
+2019-11-24T21:01:28.406-0500 E STORAGE  [initandlisten] Failed to set up listener: SocketException: Address already in use
+.......
+##Method not used ###############################
+##Try mongod --port 27018
+
+You can change the port number of your choice.
+#################################################
+
+## Another method#################################
+To kill the previous mongod instance, first search for a list of tasks running on your machine by typing,
+
+root@oleksandr-ThinkPad-X140e:~# sudo lsof -iTCP -sTCP:LISTEN -n -P
+COMMAND     PID            USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
+.......
+mongod     5892         mongodb   11u  IPv4 11740893      0t0  TCP 127.0.0.1:27017 (LISTEN)
+.......
+root@oleksandr-ThinkPad-X140e:~# sudo kill 5892
+##Now start your mongod instance by typing,
+##mongod
+root@oleksandr-ThinkPad-X140e:~# mongod
+.......
+2019-11-24T21:57:33.150-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+## from another terminal
+oleksandr@oleksandr-ThinkPad-X140e:~$ mongo
+.......
+##in terminal that started mongod will see the message
+2019-11-24T22:00:23.551-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57112 #1 (1 connection now open)
